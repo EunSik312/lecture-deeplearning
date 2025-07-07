@@ -135,82 +135,109 @@ cv2.destroyAllWindows()
 ### 💡 추가 팁
 - OpenCV는 `NumPy 배열` 기반으로 동작하므로 NumPy 배열 슬라이싱과 연산에 익숙해지는 것이 매우 중요합니다.
 - 영상 분석, 객체 검출, 딥러닝 연동 등 실전 프로젝트에도 쉽게 확장할 수 있습니다.
-
-물론입니다! 이번에는 \*\*OpenCV에서 자주 사용하는 모듈(하위 기능 묶음)\*\*을 정리해 드릴게요. OpenCV는 내부적으로 여러 개의 기능을 **모듈 단위**로 나누고 있으며, 각 모듈은 **특정한 비전 작업**에 특화되어 있습니다.
-
----
-
-## 🧩 OpenCV 주요 모듈 정리
-
-````markdown
-# 🧩 OpenCV 주요 모듈 (기능별 분류)
+좋습니다! 아래는 OpenCV의 주요 **모듈 이름, 설명, 자주 쓰는 함수 예시**를 **엑셀처럼 보기 쉬운 형태**로 정리한 것입니다.
+표 형태가 아닌 **행 단위 정리**로 구성해드릴게요. 각 항목은 실제 보고서나 노션, 에버노트에도 붙여넣기 좋습니다.
 
 ---
 
-| 모듈 이름 | 설명 및 기능 예시 |
-|-----------|-------------------|
-| `cv2.imgproc` | 이미지 전처리 기능 (블러, 임계값, 필터링, Morphology 등) |
-| `cv2.highgui` | GUI 창, 이미지/영상 출력, 키보드 입력 처리 |
-| `cv2.videoio` | 비디오 캡처 (카메라, 영상 파일), 저장 |
-| `cv2.core` | 핵심 기능 모듈: 행렬 연산, 데이터 구조, 기본 연산 |
-| `cv2.objdetect` | 객체 검출 (예: 얼굴, 눈 검출 등) |
-| `cv2.features2d` | 특징점 검출 (SIFT, SURF, ORB 등) |
-| `cv2.video` | 영상 분석 (Optical Flow, Background Subtraction 등) |
-| `cv2.calib3d` | 카메라 캘리브레이션, 3D 재구성 등 |
-| `cv2.ml` | 머신러닝 지원 (SVM, KNN, Decision Trees 등) |
-| `cv2.dnn` | 딥러닝 추론 지원 (YOLO, TensorFlow, Caffe 모델 불러오기 등) |
-| `cv2.face` | 얼굴 인식 및 특성점 추출 (contrib 버전 필요) |
-| `cv2.aruco` | ArUco 마커 검출 및 추적 (증강현실 등에 사용) |
-| `cv2.photo` | 이미지 복원, 노이즈 제거, HDR 처리 등 |
-| `cv2.stitching` | 파노라마 이미지 자동 생성 |
-| `cv2.tracking` | 객체 추적 알고리즘 (KCF, MIL, CSRT 등) |
+## 🧩 OpenCV 주요 모듈 정리 (엑셀 스타일 레이아웃)
 
 ---
 
-## ✅ 예시: 각 모듈에서 자주 쓰는 함수
-
-### `cv2.imgproc`
-- `cv2.GaussianBlur()`, `cv2.Canny()`, `cv2.threshold()`, `cv2.dilate()`
-
-### `cv2.highgui`
-- `cv2.imshow()`, `cv2.waitKey()`, `cv2.destroyAllWindows()`
-
-### `cv2.dnn`
-- `cv2.dnn.readNetFromDarknet()`, `cv2.dnn.blobFromImage()`
-
-### `cv2.videoio`
-- `cv2.VideoCapture()`, `cv2.VideoWriter()`
+**\[모듈명]** `cv2.imgproc`
+**설명:** 이미지 전처리 (블러, 엣지, 임계값, 필터링, Morphology 등)
+**대표 함수:** `GaussianBlur()`, `Canny()`, `threshold()`, `dilate()`, `erode()`
 
 ---
 
-## 💡 참고
-
-- 일부 모듈(`cv2.face`, `cv2.aruco`, `cv2.stitching`, `cv2.tracking`)은 **opencv-contrib-python** 설치가 필요합니다:
-
-```bash
-pip install opencv-contrib-python
-````
-
-* `dir(cv2)` 또는 `help(cv2.module_name)`을 이용하면 Python에서 모듈 목록을 확인할 수 있습니다.
+**\[모듈명]** `cv2.highgui`
+**설명:** GUI 창 관리, 이미지/영상 출력, 키 입력 처리
+**대표 함수:** `imshow()`, `waitKey()`, `destroyAllWindows()`, `namedWindow()`
 
 ---
 
-```
-
-## 📚 요약
-
-| 구분 | 모듈 이름 | 설명 |
-|------|-----------|------|
-| 전처리 | `imgproc` | 영상 필터, 임계값, 모폴로지 |
-| 입출력 | `highgui`, `videoio` | 이미지/영상 출력 및 캡처 |
-| 객체 검출 | `objdetect`, `face`, `dnn` | 얼굴, 물체, 딥러닝 모델 활용 |
-| 특징 추출 | `features2d`, `ml` | SIFT, SURF, 머신러닝 등 |
-| 영상 분석 | `video` | Optical flow, 배경 제거 등 |
-| 3D | `calib3d`, `stitching` | 카메라 보정, 파노라마 |
-| 기타 | `tracking`, `photo`, `aruco` | 추적, HDR, 증강현실 등 |
+**\[모듈명]** `cv2.videoio`
+**설명:** 비디오/카메라 캡처 및 저장
+**대표 함수:** `VideoCapture()`, `VideoWriter()`, `isOpened()`, `read()`
 
 ---
 
-필요하시면 각 모듈별 **사용 예제 코드**도 드릴 수 있습니다.  
-특정 모듈을 실습하고 싶으신 게 있다면 말씀해 주세요! 😊
-```
+**\[모듈명]** `cv2.core`
+**설명:** OpenCV의 핵심 기능. 배열, 스칼라, 행렬 연산 등
+**대표 함수:** `add()`, `multiply()`, `Scalar()`, `Mat()`
+
+---
+
+**\[모듈명]** `cv2.objdetect`
+**설명:** 객체 검출 (얼굴, 눈, 전체 신체 등)
+**대표 함수:** `CascadeClassifier()`, `detectMultiScale()`
+
+---
+
+**\[모듈명]** `cv2.features2d`
+**설명:** 특징점 검출 및 기술자 생성 (SIFT, SURF, ORB 등)
+**대표 함수:** `SIFT_create()`, `ORB_create()`, `drawKeypoints()`
+
+---
+
+**\[모듈명]** `cv2.face` *(contrib 필요)*
+**설명:** 얼굴 인식, 얼굴 랜드마크 추출, 얼굴 분류 등
+**대표 함수:** `LBPHFaceRecognizer_create()`, `FacemarkLBF_create()`
+
+---
+
+**\[모듈명]** `cv2.dnn`
+**설명:** 딥러닝 모델 로딩 및 추론 (YOLO, SSD, Caffe 등)
+**대표 함수:** `readNetFromDarknet()`, `blobFromImage()`, `forward()`
+
+---
+
+**\[모듈명]** `cv2.video`
+**설명:** 영상 분석 및 추적 (Optical Flow, Background Subtraction 등)
+**대표 함수:** `calcOpticalFlowPyrLK()`, `BackgroundSubtractorMOG2()`
+
+---
+
+**\[모듈명]** `cv2.calib3d`
+**설명:** 카메라 캘리브레이션, 3D 재구성
+**대표 함수:** `findChessboardCorners()`, `calibrateCamera()`, `reprojectImageTo3D()`
+
+---
+
+**\[모듈명]** `cv2.aruco` *(contrib 필요)*
+**설명:** ArUco 마커 생성 및 검출 (증강현실 등에 활용)
+**대표 함수:** `detectMarkers()`, `drawDetectedMarkers()`, `estimatePoseSingleMarkers()`
+
+---
+
+**\[모듈명]** `cv2.photo`
+**설명:** 고급 사진 처리 (노이즈 제거, HDR 합성 등)
+**대표 함수:** `fastNlMeansDenoising()`, `createTonemap()`
+
+---
+
+**\[모듈명]** `cv2.stitching` *(contrib 필요)*
+**설명:** 여러 이미지를 자동으로 이어붙여 파노라마 생성
+**대표 함수:** `createStitcher()`, `stitch()`
+
+---
+
+**\[모듈명]** `cv2.tracking` *(contrib 필요)*
+**설명:** 객체 추적 알고리즘 (KCF, CSRT 등 실시간 추적)
+**대표 함수:** `TrackerKCF_create()`, `TrackerCSRT_create()`, `update()`
+
+---
+
+## 📌 참고
+
+* `cv2.face`, `cv2.tracking`, `cv2.aruco`, `cv2.stitching`은 `opencv-contrib-python` 설치가 필요합니다:
+
+  ```bash
+  pip install opencv-contrib-python
+  ```
+
+---
+
+필요하시면 이 내용을 \*\*엑셀 파일(.xlsx)\*\*이나 **표로 변환한 Markdown/HTML** 형식으로도 제공해드릴 수 있어요.
+원하시면 말씀만 해주세요! 😊
+
