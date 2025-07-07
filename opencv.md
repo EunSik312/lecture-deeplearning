@@ -309,6 +309,42 @@ roi_copy = img[100:200, 150:300].copy()
 
 ```
 
+좋아요! 요청하신 형식에 맞춰, **OpenCV에서 자주 사용하는 라이브러리들과 설명, 설치 명령어**를 표 형식으로 정리해드릴게요.
+(이미지처럼 깔끔한 표 형태의 마크다운 형식입니다.)
+
 ---
 
+```markdown
+## 📦 OpenCV에 필요한 주요 라이브러리 구성
+
+| 라이브러리 | 설명 | 설치 명령어 |
+|------------|------|--------------|
+| `opencv-python` | OpenCV의 Python 버전 (핵심 기능 제공) | `pip install opencv-python` |
+| `numpy` | OpenCV는 이미지를 NumPy 배열로 처리함 | `pip install numpy` |
+| `matplotlib` | 이미지 시각화, 출력 및 플롯 그리기에 사용 | `pip install matplotlib` |
+| `opencv-contrib-python` | SIFT, SURF 등 추가 모듈 포함된 확장 버전 | `pip install opencv-contrib-python` |
+| `pillow` | 이미지 저장, 변환 등 보조적 이미지 처리 | `pip install pillow` |
+| `imutils` | 이미지 회전, 사이즈 변경 등 유틸 함수 모음 | `pip install imutils` |
+| `scikit-image` | 고급 이미지 처리 기능 제공 (필터, 색상 공간 등) | `pip install scikit-image` |
+| `tqdm` | 이미지 처리 시 진행 상황을 시각적으로 표시 | `pip install tqdm` |
+
+```
+
+---
+
+### ✅ 설치 꿀팁
+
+* 최소한으로 필요한 경우:
+
+  ```bash
+  pip install opencv-python numpy
+  ```
+
+* SIFT, SURF, ArUco, Face Detection 등 추가 기능이 필요하면:
+
+  ```bash
+  pip install opencv-contrib-python
+  ```
+
+---
 
