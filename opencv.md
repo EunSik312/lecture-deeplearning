@@ -162,3 +162,85 @@ cv2.destroyAllWindows()
 필요하시면 `이미지 필터 적용`, `YOLO로 객체 검출`, `OpenCV + 딥러닝 모델` 등 더 심화 예제도 드릴 수 있어요.  
 특정 프로젝트에 적용하실 건가요? 목적에 맞춰 정리해드릴 수도 있어요.
 ```
+좋습니다! 아래는 **OpenCV에서 자주 사용되는 라이브러리**와 \*\*기본적으로 자주 등장하는 용어(개념)\*\*들을 한눈에 보기 쉽게 정리한 내용입니다.
+마크다운 형식도 제공하니 바로 GitHub 문서로 옮기기에도 좋습니다.
+
+---
+
+## 📘 OpenCV 관련 라이브러리 & 자주 쓰는 용어 정리
+
+```markdown
+# 🧰 OpenCV에서 사용되는 주요 라이브러리와 용어 정리
+
+---
+
+## 📦 주요 라이브러리 (Python 기준)
+
+| 라이브러리 | 용도 / 설명 |
+|------------|-------------|
+| **cv2** | OpenCV 메인 라이브러리 (`import cv2`) |
+| **numpy** | 이미지 배열 처리 및 수학 계산 (`import numpy as np`) |
+| **matplotlib** | 이미지 시각화 및 분석 (`import matplotlib.pyplot as plt`) |
+| **os** | 파일 경로 처리 및 시스템 접근 |
+| **glob** | 여러 이미지 파일을 한꺼번에 불러올 때 사용 |
+| **time** | 처리 시간 측정, 영상 프레임 조절 등에 사용 |
+| **Pillow (PIL)** | 이미지 파일 열기, 저장, 포맷 변경 등 (보조적으로 사용) |
+| **imutils** | OpenCV의 기능을 더 쉽게 다룰 수 있게 해주는 유틸리티 패키지 |
+
+---
+
+## 🧠 OpenCV 주요 용어 정리
+
+| 용어 | 설명 |
+|------|------|
+| **BGR / RGB** | OpenCV는 기본적으로 BGR 형식을 사용 (Matplotlib은 RGB) |
+| **Grayscale** | 흑백 이미지 (채널 1개) |
+| **Pixel** | 이미지의 최소 단위 (색상 값 포함) |
+| **ROI (Region of Interest)** | 관심 영역: 이미지의 특정 부분만 처리할 때 사용 |
+| **Thresholding** | 픽셀 값을 기준으로 이진화 처리 (0 또는 255로 구분) |
+| **Edge Detection** | 경계선 검출 (예: Canny 알고리즘) |
+| **Contour** | 동일 색/형태를 이루는 외곽선 경계 정보 |
+| **Morphology** | 침식(erosion), 팽창(dilation) 등 구조적 이미지 처리 |
+| **Kernel** | 이미지 필터링 시 사용하는 작은 행렬 |
+| **Blurring** | 이미지의 노이즈 제거, 흐림 처리 (GaussianBlur 등) |
+| **Histogram** | 밝기 분포 또는 색상 분포를 나타낸 그래프 |
+| **Cascade Classifier** | 얼굴, 눈 등 객체를 인식하는 사전 학습된 모델 |
+| **VideoCapture** | 웹캠이나 비디오 파일을 불러오는 객체 (`cv2.VideoCapture`) |
+| **waitKey()** | 키보드 입력을 기다리는 함수 (프레임 제어에도 사용) |
+| **imshow()** | 이미지 또는 프레임을 창에 표시하는 함수 |
+| **imread(), imwrite()** | 이미지 읽기/저장 함수 |
+| **resize(), rotate()** | 이미지 크기 조정 / 회전 |
+
+---
+
+## 🧪 추가 용어 (실시간 및 딥러닝 관련)
+
+| 용어 | 설명 |
+|------|------|
+| **FPS (Frames per Second)** | 초당 영상 프레임 수 |
+| **YOLO / SSD / DNN** | 딥러닝 기반 객체 탐지 모델 (OpenCV에서 사용 가능) |
+| **Haar Cascade** | Haar 특징 기반 객체 검출 알고리즘 |
+| **HOG** | Histogram of Oriented Gradients: 객체 특징 추출 |
+| **Background Subtraction** | 배경 제거 기법 (움직이는 객체 탐지 등) |
+
+---
+
+## 📚 참고
+
+- OpenCV 공식 문서: [https://docs.opencv.org](https://docs.opencv.org)
+- Python OpenCV 튜토리얼: [https://opencv-python-tutroals.readthedocs.io](https://opencv-python-tutroals.readthedocs.io)
+
+```
+
+---
+
+### ✅ 활용 팁
+
+* `numpy`와 함께 배열 처리에 익숙해지면 OpenCV가 훨씬 강력해집니다.
+* OpenCV는 이미지를 단순히 "행렬"로 다루기 때문에 수학적 개념이 중요합니다.
+* 실시간 처리할 땐 `cv2.VideoCapture()`와 `cv2.waitKey()` 조합이 핵심입니다.
+
+---
+
+필요하시면 각각의 용어에 대해 코드 예제도 추가로 만들어드릴게요.
+특정 용어나 라이브러리에 대해 더 알고 싶은 게 있으신가요?
