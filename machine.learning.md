@@ -120,4 +120,82 @@
 이 문서는 GitHub에서 머신러닝 개요를 설명하거나 교육용 자료로 매우 유용합니다. 원하시면 코드 예제나 시각 자료도 추가해 드릴 수 있어요!
 
 
+## 🐧 Seaborn이란?
+
+#**Seaborn**은 Python에서 사용하는 **데이터 시각화 라이브러리**입니다.
+#Matplotlib을 기반으로 하고 있으며, **통계적 그래프를 더 쉽게, 더 예쁘게** 만들 수 있도록 도와줍니다.
+
+---
+
+## ✅ 기본 사용법
+
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
+```
+
+* `sns`는 `seaborn`의 **별칭(alias)** 으로 일반적으로 이렇게 불러옵니다.
+* Matplotlib과 함께 사용하는 경우가 많습니다.
+
+---
+
+## 📊 예시: 간단한 그래프 그리기
+
+### 1. **타이타닉 데이터셋 로드 & 시각화**
+
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# 내장 데이터셋 로드
+titanic = sns.load_dataset("titanic")
+
+# 성별에 따른 생존률 막대 그래프
+sns.barplot(x="sex", y="survived", data=titanic)
+
+plt.title("생존률 (성별)")
+plt.show()
+```
+
+---
+
+### 2. **히트맵 (Heatmap)**
+
+```python
+flights = sns.load_dataset("flights")
+pivot = flights.pivot("month", "year", "passengers")
+
+sns.heatmap(pivot, annot=True, fmt="d", cmap="YlGnBu")
+plt.title("연도별 월별 비행기 탑승객 수")
+plt.show()
+```
+
+---
+
+## 🔧 자주 쓰는 함수
+
+| 함수                  | 설명                      |
+| ------------------- | ----------------------- |
+| `sns.barplot()`     | 범주형 변수 막대 그래프           |
+| `sns.countplot()`   | 항목별 개수 세기               |
+| `sns.histplot()`    | 히스토그램                   |
+| `sns.boxplot()`     | 상자 그림                   |
+| `sns.heatmap()`     | 열 지도 (상관관계, 수치 데이터 시각화) |
+| `sns.pairplot()`    | 여러 변수들의 관계 시각화          |
+| `sns.scatterplot()` | 산점도 (점으로 데이터 표현)        |
+
+---
+
+## 📦 설치
+
+Seaborn이 설치되어 있지 않다면, 아래 명령어로 설치할 수 있어요:
+
+```bash
+pip install seaborn
+```
+
+---
+
+필요하시면 더 고급 예제나 한글폰트 설정, matplotlib 비교 등도 알려드릴게요!
+`pandas`와 함께 쓰는 게 보통인데, 데이터프레임 연습도 도와드릴까요?
 
