@@ -1,4 +1,4 @@
-\*\*CNN (Convolutional Neural Network)\*\*
+0\*\*CNN (Convolutional Neural Network)\*\*
 | Term                                 | Description                                                                                         |
 | ------------------------------------ | --------------------------------------------------------------------------------------------------- |
 | **Convolution**                      | Sliding a filter (kernel) over the input to extract features like edges, textures, etc.             |
