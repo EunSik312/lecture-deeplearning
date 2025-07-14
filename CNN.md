@@ -165,3 +165,29 @@
 - 전통적 필터를 초기값으로 사용
 - fine-tuning을 통해 최적화
 - 해석 가능한 특징 추출
+
+
+
+###혁펜하입의 이지 딥러닝
+
+##CNN
+컨볼션의 동작 방식: 컨볼루션은 이미지의 일부분을 연결함
+일부분을 연결해서 웨이트를 곱하고 바이어스를 더한뒤 액티베이션 함수를 통과시켜 하나의 노드를 생성함
+가까이 밀집한 픽셀을 연결함으로 위치 정보가 보존됨, 각 노드는 특정 영역을 담당함
+적은 파라미터로 효울적인 학습이 가능함
+컨볼루션에 이용되는 웨이트 세트는 행렬로 나타내고 이것을 Kernel or Filter이라고 부름
+컨볼루션 연산의 핵심은 벡터간의 내적과 동일수직
+컨볼루션을 거친 이미지는 어떤 특징이 어디에 얼마나 강하게 존재하는지를 보여준다
+<img width="1385" height="746" alt="image" src="https://github.com/user-attachments/assets/b5de3cce-5e30-4cb8-aca2-bf2000902c64" />
+이미지 업로드-수직 필터 이용
+<img width="1343" height="562" alt="image" src="https://github.com/user-attachments/assets/369eb81c-fcfc-4efb-b03d-5b111ea1981f" />
+이미지 업로드 - 수평 필터 이용
+<img width="1353" height="567" alt="image" src="https://github.com/user-attachments/assets/5841867b-4128-4eb6-88ea-95764118851b" />
+이미지 업로드 - 블러 필터 이용
+<img width="1363" height="582" alt="image" src="https://github.com/user-attachments/assets/39cb35a1-3594-4058-8ffb-be4453936c29" />
+이미지 업로드 - 샤프닝 필터 이용
+<img width="1350" height="566" alt="image" src="https://github.com/user-attachments/assets/1d6ab25f-3392-4e48-8e6e-e9b7fd0999f2" />
+이미지 업로드 - 결과
+<img width="1350" height="420" alt="image" src="https://github.com/user-attachments/assets/1a7f1f45-7581-4b34-bbfb-fa9c7b4534b1" />
+
+
