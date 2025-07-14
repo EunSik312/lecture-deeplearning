@@ -1,5 +1,4 @@
-다음은 \*\*CNN (Convolutional Neural Network)\*\*에서 자주 사용되는 주요 용어들을 영어로 정리한 도표입니다. 각 용어의 간단한 설명을 함께 포함하였습니다.
-
+\*\*CNN (Convolutional Neural Network)\*\*
 | Term                                 | Description                                                                                         |
 | ------------------------------------ | --------------------------------------------------------------------------------------------------- |
 | **Convolution**                      | Sliding a filter (kernel) over the input to extract features like edges, textures, etc.             |
@@ -23,4 +22,4 @@
 | **Regularization**                   | Techniques (e.g., L2, dropout) used to reduce overfitting.                                          |
 | **Activation Map**                   | Another term for a feature map, emphasizing the effect of activation functions.                     |
 
-필요하다면 각 항목에 대해 더 자세히 설명하거나 예시도 추가해줄 수 있어요. Markdown 또는 Excel 형태로도 제공 가능합니다.
+
