@@ -2,6 +2,8 @@
 
 ### 참고링크
 
+https://github.com/NVIDIA-AI-IOT/deepstream_reference_apps
+
 https://docs.google.com/document/d/1WUtXecVecKDd5b2omhBJMx-FiIq2zsVs_Fsetb5rdcE/edit?tab=t.0
 
 <img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/0298aa80-e8c8-44b6-bf4e-adc7a4345a2a" />
