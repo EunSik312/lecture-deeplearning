@@ -2,6 +2,8 @@
 
 ### 참고링크
 
+https://org.ngc.nvidia.com/setup/installers/cli
+
 https://github.com/NVIDIA-AI-IOT/deepstream_reference_apps
 
 https://docs.google.com/document/d/1WUtXecVecKDd5b2omhBJMx-FiIq2zsVs_Fsetb5rdcE/edit?tab=t.0
