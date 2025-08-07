@@ -28,3 +28,10 @@ k(스프링 상수): 평형점으로부터의 변위에 저항 = C
 
 <img width="909" height="476" alt="image" src="https://github.com/user-attachments/assets/d2794e5f-0702-42b5-9492-b623e56fa03a" />
 
+<img width="915" height="585" alt="image" src="https://github.com/user-attachments/assets/0a826e5c-5c76-440c-9313-f471ffebc87a" />
+
+박사님이 답답했던 것 > 컴퓨터로 뛰면 되는데 
+
+D: 에러 변화율에 대한 비율
+<img width="924" height="475" alt="image" src="https://github.com/user-attachments/assets/e98c8702-b52e-4805-b63b-f0c821a7ca82" />
+
