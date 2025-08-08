@@ -1,3 +1,5 @@
+
+}
 # CUDA
 
 어떻게 빠르게 처리하는지, 자율주행의 실시간 인지를 가능하계하는 gpu
@@ -18,7 +20,7 @@ C++, Python, C
 
 numab cuda를 설치 해야함
 <img width="529" height="93" alt="image" src="https://github.com/user-attachments/assets/7b06396d-b71f-4849-8010-e3e500ae7690" />
-
+https://github.com/googlecolab/colabtools/issues/5081#issuecomment-2629611179
 
 # CUDA (쿠다) 란 무엇인가?
 ## 1. 한 줄 정의
@@ -79,3 +81,17 @@ cuFFT: 고속 푸리에 변환을 위한 라이브러리.
 압도적인 성능 향상: 인공지능(AI) 학습, 대규모 데이터 분석, 과학 시뮬레이션 등 방대한 연산이 필요한 작업의 속도를 수십 배에서 수백 배까지 높여 현대 컴퓨팅의 발전을 이끌고 있습니다.
 
 개발 생태계와 접근성: 과거에는 C++ 전문가만 다룰 수 있었지만, 이제는 Numba, PyTorch, TensorFlow와 같은 파이썬 라이브러리를 통해 훨씬 쉽게 CUDA의 강력한 성능을 활용할 수 있게 되었습니다.
+
+<img width="977" height="174" alt="image" src="https://github.com/user-attachments/assets/594b82d4-cf68-4fcc-a0d2-24e0b25e646e" />
+
+nsys 설치 
+
+!apt update
+!apt install -y --no-install-recommends gnupg
+!echo "deb http://developer.download.nvidia.com/devtools/repos/ubuntu$(source /etc/lsb-release; echo "$DISTRIB_RELEASE" | tr -d .)/$(dpkg --print-architecture) /" | tee /etc/apt/sources.list.d/nvidia-devtools.list
+!apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
+!apt update
+!apt install nsight-systems-cli
+
+<img width="977" height="407" alt="image" src="https://github.com/user-attachments/assets/7c046932-7731-4407-84c2-00d4bee0ad68" />
+
