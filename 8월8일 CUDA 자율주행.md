@@ -97,4 +97,8 @@ nsys 설치
 
 <img width="994" height="283" alt="image" src="https://github.com/user-attachments/assets/b76ac8c6-75e5-4c8e-8ee9-397efaf3ec04" />
 
+https://huggingface.co/blog/pi0
+
+https://github.com/NVIDIA/Isaac-GR00T
+
 배우는 것은 목표가 정해져 있어야함
