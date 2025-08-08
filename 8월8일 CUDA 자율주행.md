@@ -95,3 +95,4 @@ nsys 설치
 
 <img width="977" height="407" alt="image" src="https://github.com/user-attachments/assets/7c046932-7731-4407-84c2-00d4bee0ad68" />
 
+<img width="994" height="283" alt="image" src="https://github.com/user-attachments/assets/b76ac8c6-75e5-4c8e-8ee9-397efaf3ec04" />
