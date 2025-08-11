@@ -1,1 +1,98 @@
 # 코랩에서 ai돌릴 땐 gpu로 런타임 유형 바꾸기 
+---
+
+# 핵심 요약
+
+* Ultralytics의 **YOLO11** 시리즈는 `-seg` 접미사가 있는 모델로 **인스턴스 세그멘테이션**(객체별 마스크)을 지원합니다. `yolo11x-seg.pt`가 XL 세그멘티션 모델입니다. ([docs.ultralytics.com][1])
+
+---
+
+# 1) 설치
+
+터미널 / Colab에서 (권장: GPU 환경)
+
+```bash
+pip install ultralytics
+# 또는 최신 dev 버전 필요하면 깃허브에서 설치
+pip install git+https://github.com/ultralytics/ultralytics.git
+```
+
+(첫 사용 시 모델 파일은 자동으로 다운로드됩니다.) ([GitHub][2], [Google Colab][3])
+
+---
+
+# 2) 간단한 **추론** 예제 (Python)
+
+```python
+from ultralytics import YOLO
+
+# pretrained XL segmentation 모델 로드
+model = YOLO("yolo11x-seg.pt")  # 또는 "yolo11x-seg.yaml" 같은 로컬 가중치
+
+# 이미지 추론
+results = model.predict(source="image.jpg", imgsz=1280, conf=0.25, task="segment")
+# 또는 비디오
+results = model.predict(source="input.mp4", save=True, show=False, task="segment")
+
+# 결과: 각 인스턴스에 masks, boxes, class, confidence 포함
+```
+
+`task="segment"`를 지정하면 마스크(인스턴스 세그멘트)를 반환합니다. ([docs.ultralytics.com][4])
+
+---
+
+# 3) CLI 예제
+
+```bash
+# 이미지 / 폴더
+yolo predict model=yolo11x-seg.pt source=images/ imgsz=1280 task=segment
+
+# 비디오
+yolo predict model=yolo11x-seg.pt source=input.mp4 save=true task=segment
+```
+
+(옵션: `conf`, `iou`, `device` 등 조정 가능) ([docs.ultralytics.com][4])
+
+---
+
+# 4) 커스텀 데이터로 학습 (핵심 포인트)
+
+* **포맷**: COCO 형식(권장) — 이미지 + annotations (polygon/mask 또는 RLE 포함). Ultralytics 문서에 학습·데이터 예시와 yaml 파일 형식 있음. ([docs.ultralytics.com][4], [Google Colab][3])
+* 간단한 학습 코드:
+
+```python
+from ultralytics import YOLO
+model = YOLO("yolo11x-seg.pt")  # 또는 yolo11m-seg.pt로 transfer learning
+model.train(data="your_dataset.yaml", epochs=100, imgsz=640, batch=16)
+```
+
+* `your_dataset.yaml` 에는 train/val 경로와 클래스 목록이 들어감 (COCO 스타일 권장).
+* 주의: 인스턴스 세그멘테이션에서는 **정확한 마스크(annotation)** 가 성능에 큰 영향을 줍니다. ([docs.ultralytics.com][4])
+
+---
+
+# 5) 인스턴스 vs. 시맨틱 세그멘테이션
+
+* Ultralytics의 `-seg` 모델은 **인스턴스 세그멘테이션**(객체별 마스크)입니다. 픽셀별 클래스(semantic segmentation)를 원하면 SAM 연동 또는 별도 semantic 모델을 고려해야 합니다. (현재 Ultralytics는 주로 instance segmentation을 지원함). ([docs.ultralytics.com][4], [Reddit][5])
+
+---
+
+# 6) 성능/튜닝 팁
+
+* **이미지 크기(imgsz)** : 큰 객체 정밀도가 중요하면 `imgsz=1280` 같이 크게 설정하되 GPU 메모리 사용량이 커짐.
+* **배치 크기** vs **이미지 크기**: 메모리 한계에 맞춰 조절. mixed precision(AMP) 사용 권장.
+* **전이학습**: `yolo11x-seg.pt`로 finetune 하거나, 속도/메모리 제약이면 `yolo11m-seg`/`yolo11l-seg` 사용.
+* 모델을 임베디드/추론 최적화하려면 OpenVINO/ONNX/TensorRT로 변환 가능 (Ultralytics docs 및 OpenVINO 튜토리얼 참고). ([OpenVINO Documentation][6], [GitHub][2])
+
+---
+
+# 7) 빠른 디버깅 체크리스트
+
+* 학습 시 마스크 어노테이션이 정확한가? (polygon/rle)
+* `dataset.yaml`의 경로/클래스 수가 맞는가?
+* GPU 메모리 부족? -> imgsz나 batch 줄이기
+* 추론 결과가 전혀 나오지 않으면 `conf`, `iou` 낮춰 확인
+
+---
+
+
