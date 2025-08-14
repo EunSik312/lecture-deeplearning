@@ -12,8 +12,7 @@
 u는 인풋이다
 
 <img width="916" height="496" alt="image" src="https://github.com/user-attachments/assets/07de2c05-7e06-4eff-a3d1-ba08c7d8ee07" />
-
-제차 미방 ( 입력 X ), 비제차 미방 ( 입력 O )
+homo ( inputs X ), non-homo ( inputs O )
 
 ### 2차 미분 방정식의 의미
 mass(질량(관성)): 에너지를 소모하는 는 것 = R
